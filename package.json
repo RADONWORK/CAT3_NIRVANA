@@ -19,16 +19,16 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-"deploy": "gh-pages -d build"
-
+    "deploy": "gh-pages -d build"
   },
-  "homepage": "https://github.com/Pranava116/CAT_Nirvana_Iter2",
+  "homepage": "https://github.com/Pranava116/CAT3_Nirvana",
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
   },
+
   "browserslist": {
     "production": [
       ">0.2%",
