@@ -1,0 +1,26 @@
+/* Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff00; /* solid white */
+  border-radius: 0;          /* remove rounding if needed */
+  margin: 0;                 /* remove outer margin */
+  width: 100%;               /* full width */
+}
+
+.navbar img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.center-img {
+  width: 200px;
+}
+
+body {
+  margin: 0;
+  background-color: #ffffff; /* also set page background white */
+}

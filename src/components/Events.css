@@ -1,0 +1,192 @@
+/* ===== EVENT CARD - SPACING FIXES ===== */
+/* Ensure card uses column layout and stretches to equal heights in the grid */
+.event-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;                    /* consistent vertical spacing between elements */
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(180, 100, 255, 0.22);
+  border-radius: 18px;
+  padding: 22px;                /* comfortable padding inside card */
+  box-shadow: 0 0 28px rgba(150, 50, 255, 0.12);
+  backdrop-filter: blur(6px);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s;
+  min-height: 220px;            /* gives cards a base height for small-content cards */
+}
+
+/* Hover lift stays the same but softened */
+.event-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(190, 120, 255, 0.45);
+  box-shadow: 0 10px 40px rgba(190, 120, 255, 0.18);
+}
+
+/* Header block: keep info compact and aligned */
+.event-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;                    /* remove extra margin so spacing is controlled by gap */
+}
+.btn{
+    align-self: flex-end;         /* anchor register button to the right-bottom */
+  margin-top: 6px;
+  background: linear-gradient(90deg, rgba(163,102,255,0.95), rgba(131,56,236,0.95));
+  border: none;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  box-shadow: 0 6px 18px rgba(130, 60, 220, 0.18);
+}
+/* Event title stays prominent */
+.event-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.15;
+  text-shadow: 0 0 8px rgba(180, 100, 255, 0.36);
+}
+
+/* Meta (date/time) aligned right, but compact */
+.event-meta {
+  font-size: 0.82rem;
+  color: rgba(220, 220, 255, 0.78);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: right;
+  min-width: 98px;              /* keeps meta column stable */
+}
+
+/* Description grows to take available space — this helps align all CTAs to the bottom */
+.event-description {
+  margin: 0;
+  color: rgba(220, 220, 255, 0.88);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  flex: 1 1 auto;               /* allow description to expand and push footer down */
+  min-height: 56px;
+}
+
+/* Details area is visually separated and compact */
+.event-details {
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: rgba(220, 220, 255, 0.82);
+}
+
+/* Stronger label styling */
+.detail-label {
+  font-weight: 600;
+  color: #cdb8ff;
+}
+
+/* CTA area: keep buttons grouped and anchored to bottom */
+.event-register {
+  align-self: flex-end;         /* anchor register button to the right-bottom */
+  margin-top: 6px;
+  background: linear-gradient(90deg, rgba(163,102,255,0.95), rgba(131,56,236,0.95));
+  border: none;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  box-shadow: 0 6px 18px rgba(130, 60, 220, 0.18);
+}
+
+.event-register:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(150, 80, 255, 0.22);
+}
+
+/* Make sure cards align visually in the grid even with variable content */
+.events-grid > .event-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Small-screen adjustments */
+@media (max-width: 768px) {
+  .event-card {
+    padding: 18px;
+    gap: 10px;
+    min-height: 180px;
+  }
+
+  .event-meta { min-width: 0; text-align: left; align-items: flex-start; }
+  .event-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .event-register { align-self: stretch; text-align: center; }
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #1a1a2e;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.modal-body {
+  margin-bottom: 20px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal-rules-text {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  color: #ddd;
+}
