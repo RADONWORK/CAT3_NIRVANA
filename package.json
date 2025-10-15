@@ -21,7 +21,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://github.com/Pranava116/CAT3_Nirvana",
+  "homepage": "https://Pranava116.github.io/CAT3_NIRVANA"
   "eslintConfig": {
     "extends": [
       "react-app",
